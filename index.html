@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Events</title>
+  </head>
+  <body>
+    <h1>Javascript Events</h1>
+    <p>
+      An event is a signal that something has happened. For example, when a user
+      clicks a button, that is an event. Javascript can be used to respond to
+      these events.
+    </p>
+    <p>
+      The function that executes when an event occurs is called an event
+      handler. Event handlers are used to handle and manage events.
+    </p>
+    <button onclick="alert('click event triggered')">Click me!</button>
+    <button>No event listeners attached to this button</button>
+    <button ondblclick="alert('double click event triggered')">
+      Double click me!
+    </button>
+    <button onmouseover="alert('Mouse over event triggered')">
+      Mouse over
+    </button>
+
+    <button id="special">Special click</button>
+
+    <script>
+      // get element by id
+      var special = document.getElementById("special");
+      // add event listener for the click event
+      special.addEventListener("click", function () {
+        alert("Special click event triggered");
+      });
+    </script>
+  </body>
+</html>
