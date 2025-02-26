@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript Events</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <h1>Javascript Events</h1>
@@ -27,12 +32,25 @@
 
     <button id="special">Special click</button>
 
+    <button id="jQueryButton">Click with jQuery</button>
+
     <script>
       // get element by id
       var special = document.getElementById("special");
       // add event listener for the click event
       special.addEventListener("click", function () {
         alert("Special click event triggered");
+      });
+
+      // check if document is ready
+      $(document).ready(function () {
+        // get element by id
+        var jQueryButton = $("#jQueryButton");
+        jQueryButton.on("click", function () {
+          // update the button text by using this keyword to refer to the button
+          $(this).text("jQuery click event triggered");
+          alert("jQuery click event triggered");
+        });
       });
     </script>
   </body>
